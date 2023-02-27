@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0](https://github.com/liblaf/utils.go/compare/v1.0.1...v1.1.0) (2023-02-27)
+
+### Features
+
+- generate markdown docs ([6f49f7c](https://github.com/liblaf/utils.go/commit/6f49f7cb3594f9062af5cf89d298849e0d49ee17))
+
 ## [1.0.1](https://github.com/liblaf/utils.go/compare/v1.0.0...v1.0.1) (2023-02-27)
 
 ### Bug Fixes
