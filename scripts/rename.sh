@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -24,11 +24,11 @@ GOARCH="$(go env GOARCH)"
 
 for f in bin/*; do
   if [[ ${f} =~ .*.exe ]]; then
-    if [[ ! ${f} =~ .*-${GOOS}-${GOARCH}.exe ]]; then
+    if [[ ! ${f} =~ .*-[[:alnum:]]+-[[:alnum:]]+.exe ]]; then
       run mv "${f}" "${f%.exe}-${GOOS}-${GOARCH}.exe"
     fi
   else
-    if [[ ! ${f} =~ .*-${GOOS}-${GOARCH} ]]; then
+    if [[ ! ${f} =~ .*-[[:alnum:]]+-[[:alnum:]]+ ]]; then
       run mv "${f}" "${f}-${GOOS}-${GOARCH}"
     fi
   fi
