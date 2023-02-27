@@ -1,0 +1,39 @@
+name: Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+env:
+  PYTHON_VERSION: 3.x
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Go Environment
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: go.mod
+      - name: Generate Markdown Docs
+        run: make docs
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Deploy Documentation to Github Pages
+        run: mkdocs gh-deploy --force --no-history

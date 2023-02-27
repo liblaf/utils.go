@@ -15,11 +15,17 @@ build: | $(BIN)
 
 clean:
 	$(RM) -r $(BIN)
+	$(RM) docs/pkg/pkg*.md
+	$(RM) docs/utils/utils*.md
 
 install:
 	GOBIN=$(GOBIN) $(GO) install ./...
 	pkg completion zsh > $(ZSH_COMPLETIONS)/_pkg
 	utils completion zsh > $(ZSH_COMPLETIONS)/_utils
+
+docs: build
+	$(BIN)/pkg-$(GOOS)-$(GOARCH) docs --prefix docs/pkg
+	$(BIN)/utils-$(GOOS)-$(GOARCH) docs --prefix docs/utils
 
 update:
 	$(GO) get -u ./...
