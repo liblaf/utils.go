@@ -1,0 +1,77 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+# - [x] Settings > General > Pull Requests > Automatically delete head branches
+# - [x] Settings > Actions > General > Workflow permissions > Allow GitHub Actions to create and approve pull requests
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    name: Build Executable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Go Environment
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: go.mod
+      - name: Build Executable
+        run: make build
+        env:
+          GOOS: ${{ matrix.os }}
+          GOARCH: ${{ matrix.arch }}
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.repository.name }}-${{ matrix.os }}-${{ matrix.arch }}
+          path: bin/*
+    strategy:
+      matrix:
+        os:
+          - darwin
+          - linux
+          - windows
+        arch:
+          - amd64
+          - arm64
+    continue-on-error: true
+
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    outputs:
+      releases-created: ${{ steps.release.outputs.releases_created }}
+      tag-name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - id: release
+        name: Create GitHub Release
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: go
+
+  upload:
+    name: Upload Release Assets
+    needs:
+      - build
+      - release
+    if: needs.release.outputs.releases-created == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      - name: Upload Release Assets
+        uses: svenstaro/upload-release-action@master
+        with:
+          file: artifacts/**/*
+          tag: ${{ needs.release.outputs.tag-name }}
+          overwrite: true
+          file_glob: true

@@ -1,0 +1,5 @@
+package conda
+
+func installerURL() string {
+	return "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+}
