@@ -30,7 +30,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ github.event.repository.name }}-${{ matrix.os }}-${{ matrix.arch }}
+          name: ${{ matrix.os }}-${{ matrix.arch }}
           path: bin/*
     strategy:
       matrix:

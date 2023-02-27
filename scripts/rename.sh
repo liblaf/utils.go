@@ -23,7 +23,13 @@ GOOS="$(go env GOOS)"
 GOARCH="$(go env GOARCH)"
 
 for f in bin/*; do
-  if [[ ! ${f} =~ .*-${GOOS}-${GOARCH} ]]; then
-    run mv "${f}" "${f}-${GOOS}-${GOARCH}"
+  if [[ ${f} =~ .*.exe ]]; then
+    if [[ ! ${f} =~ .*-${GOOS}-${GOARCH}.exe ]]; then
+      run mv "${f}" "${f%.exe}-${GOOS}-${GOARCH}.exe"
+    fi
+  else
+    if [[ ! ${f} =~ .*-${GOOS}-${GOARCH} ]]; then
+      run mv "${f}" "${f}-${GOOS}-${GOARCH}"
+    fi
   fi
 done
