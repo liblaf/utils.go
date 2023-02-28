@@ -6,7 +6,7 @@ import (
 	"github.com/liblaf/utils.go/cmd/utils/update/npm"
 	"github.com/liblaf/utils.go/cmd/utils/update/snap"
 	"github.com/liblaf/utils.go/cmd/utils/update/tldr"
-	co "github.com/liblaf/utils.go/pkg/cobra"
+	co "github.com/liblaf/utils.go/pkg/third_party/cobra"
 	"github.com/spf13/cobra"
 )
 

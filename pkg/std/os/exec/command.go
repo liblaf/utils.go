@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/dsnet/try"
-	er "github.com/liblaf/utils.go/pkg/errors"
+	er "github.com/liblaf/utils.go/pkg/std/errors"
 	"mvdan.cc/sh/v3/syntax"
 )
 

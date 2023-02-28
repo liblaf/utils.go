@@ -8,7 +8,7 @@ import (
 	"github.com/liblaf/utils.go/cmd/utils/clean/pip"
 	"github.com/liblaf/utils.go/cmd/utils/clean/tldr"
 	"github.com/liblaf/utils.go/cmd/utils/clean/tmp"
-	co "github.com/liblaf/utils.go/pkg/cobra"
+	co "github.com/liblaf/utils.go/pkg/third_party/cobra"
 	"github.com/spf13/cobra"
 )
 

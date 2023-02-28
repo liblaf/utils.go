@@ -4,7 +4,7 @@ import (
 	"github.com/dsnet/try"
 	"github.com/liblaf/utils.go/cmd/hello/docs"
 	"github.com/liblaf/utils.go/cmd/hello/hello"
-	er "github.com/liblaf/utils.go/pkg/errors"
+	er "github.com/liblaf/utils.go/pkg/std/errors"
 )
 
 func main() {

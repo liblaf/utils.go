@@ -7,8 +7,8 @@ import (
 
 	"github.com/dsnet/try"
 	"github.com/gosimple/slug"
-	fm "github.com/liblaf/utils.go/pkg/fmt"
-	o "github.com/liblaf/utils.go/pkg/os"
+	fm "github.com/liblaf/utils.go/pkg/std/fmt"
+	o "github.com/liblaf/utils.go/pkg/std/os"
 	"github.com/pterm/pterm"
 )
 

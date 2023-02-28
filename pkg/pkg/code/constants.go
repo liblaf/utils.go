@@ -3,7 +3,7 @@ package code
 import (
 	"path/filepath"
 
-	"github.com/liblaf/utils.go/pkg/os/ubuntu"
+	"github.com/liblaf/utils.go/pkg/std/os/ubuntu"
 )
 
 const sources = `### THIS FILE IS AUTOMATICALLY CONFIGURED ###

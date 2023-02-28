@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 
 	"github.com/dsnet/try"
-	er "github.com/liblaf/utils.go/pkg/errors"
 	"github.com/liblaf/utils.go/pkg/interactive/download"
-	o "github.com/liblaf/utils.go/pkg/os"
-	ex "github.com/liblaf/utils.go/pkg/os/exec"
+	er "github.com/liblaf/utils.go/pkg/std/errors"
+	o "github.com/liblaf/utils.go/pkg/std/os"
+	ex "github.com/liblaf/utils.go/pkg/std/os/exec"
 	"github.com/spf13/cobra"
 )
 

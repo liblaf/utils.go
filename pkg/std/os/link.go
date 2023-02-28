@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 
 	"github.com/dsnet/try"
-	fm "github.com/liblaf/utils.go/pkg/fmt"
+	fm "github.com/liblaf/utils.go/pkg/std/fmt"
 	"github.com/pterm/pterm"
 )
 

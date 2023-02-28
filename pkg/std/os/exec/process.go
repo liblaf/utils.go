@@ -6,7 +6,7 @@ import (
 
 	"github.com/dsnet/try"
 	"github.com/emirpasic/gods/stacks/arraystack"
-	er "github.com/liblaf/utils.go/pkg/errors"
+	er "github.com/liblaf/utils.go/pkg/std/errors"
 	"github.com/pterm/pterm"
 )
 

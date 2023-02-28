@@ -3,7 +3,7 @@ package typora
 import (
 	"path/filepath"
 
-	"github.com/liblaf/utils.go/pkg/os/ubuntu"
+	"github.com/liblaf/utils.go/pkg/std/os/ubuntu"
 )
 
 const ascURL = "https://typora.io/linux/public-key.asc"

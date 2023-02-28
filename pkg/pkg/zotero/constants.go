@@ -3,7 +3,7 @@ package zotero
 import (
 	"path/filepath"
 
-	o "github.com/liblaf/utils.go/pkg/os"
+	o "github.com/liblaf/utils.go/pkg/std/os"
 )
 
 func tarballURL() string {

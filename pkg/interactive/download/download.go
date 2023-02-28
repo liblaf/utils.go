@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 
 	"github.com/dsnet/try"
-	fm "github.com/liblaf/utils.go/pkg/fmt"
-	ex "github.com/liblaf/utils.go/pkg/os/exec"
+	fm "github.com/liblaf/utils.go/pkg/std/fmt"
+	ex "github.com/liblaf/utils.go/pkg/std/os/exec"
 	"github.com/pterm/pterm"
 )
 

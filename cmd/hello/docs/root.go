@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/dsnet/try"
-	er "github.com/liblaf/utils.go/pkg/errors"
+	er "github.com/liblaf/utils.go/pkg/std/errors"
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
 )

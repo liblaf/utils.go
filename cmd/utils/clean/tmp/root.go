@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/dsnet/try"
-	o "github.com/liblaf/utils.go/pkg/os"
+	o "github.com/liblaf/utils.go/pkg/std/os"
 	"github.com/spf13/cobra"
 )
 

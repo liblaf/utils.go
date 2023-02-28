@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 
 	"github.com/dsnet/try"
-	"github.com/liblaf/utils.go/pkg/archive"
 	"github.com/liblaf/utils.go/pkg/interactive/download"
-	o "github.com/liblaf/utils.go/pkg/os"
-	"github.com/liblaf/utils.go/pkg/os/ubuntu/desktop"
+	"github.com/liblaf/utils.go/pkg/std/archive"
+	o "github.com/liblaf/utils.go/pkg/std/os"
+	"github.com/liblaf/utils.go/pkg/std/os/ubuntu/desktop"
 )
 
 func Install() (err error) {

@@ -4,8 +4,8 @@ import (
 	"path/filepath"
 
 	"github.com/dsnet/try"
-	o "github.com/liblaf/utils.go/pkg/os"
 	"github.com/liblaf/utils.go/pkg/pkg/conda"
+	o "github.com/liblaf/utils.go/pkg/std/os"
 	"github.com/spf13/cobra"
 )
 

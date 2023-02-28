@@ -7,7 +7,7 @@ import (
 
 	"github.com/dsnet/try"
 	"github.com/google/go-github/v50/github"
-	o "github.com/liblaf/utils.go/pkg/os"
+	o "github.com/liblaf/utils.go/pkg/std/os"
 )
 
 const (

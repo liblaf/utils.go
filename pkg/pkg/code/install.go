@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/dsnet/try"
-	ex "github.com/liblaf/utils.go/pkg/os/exec"
+	ex "github.com/liblaf/utils.go/pkg/std/os/exec"
 )
 
 func Install() (err error) {
