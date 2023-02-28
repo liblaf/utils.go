@@ -1,4 +1,4 @@
-BIN             := bin
+BIN             := $(CURDIR)/bin
 SHELL           := /bin/bash
 ZSH_COMPLETIONS := $(ZSH_CUSTOM)/plugins/completions
 
@@ -11,28 +11,33 @@ GO  := $(ENV) go
 
 build: | $(BIN)
 	$(GO) build -o $(BIN) ./...
-	$(ENV) $(SHELL) $(CURDIR)/scripts/rename.sh
 
 clean:
+	$(GO) clean
 	$(RM) -r $(BIN)
+	$(RM) docs/hello/hello*.md
 	$(RM) docs/pkg/pkg*.md
 	$(RM) docs/utils/utils*.md
 
-install:
-	GOBIN=$(GOBIN) $(GO) install ./...
-	pkg completion zsh > $(ZSH_COMPLETIONS)/_pkg
-	utils completion zsh > $(ZSH_COMPLETIONS)/_utils
-
 docs: build
-	$(BIN)/pkg-$(GOOS)-$(GOARCH) docs --prefix docs/pkg
-	$(BIN)/utils-$(GOOS)-$(GOARCH) docs --prefix docs/utils
-
-update:
-	$(GO) get -u ./...
+	$(BIN)/hello docs -p docs/hello
+	$(BIN)/pkg docs -p docs/pkg
+	$(BIN)/utils docs -p docs/utils
 
 fmt:
 	$(GO) fmt ./...
 	$(GO) mod tidy
+
+install:
+	$(GO) install ./...
+	pkg completion zsh > $(ZSH_COMPLETIONS)/_pkg
+	utils completion zsh > $(ZSH_COMPLETIONS)/_utils
+
+rename: build
+	$(ENV) $(SHELL) $(CURDIR)/scripts/rename.sh
+
+update:
+	$(GO) get -u ./...
 
 $(BIN):
 	mkdir -p $@
