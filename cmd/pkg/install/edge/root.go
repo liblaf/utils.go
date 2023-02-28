@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "edge",
-	Args: cobra.NoArgs,
+	Use:   "edge",
+	Short: "https://www.microsoft.com/en-us/edge/download",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return edge.Install()

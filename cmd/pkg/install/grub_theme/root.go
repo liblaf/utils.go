@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "grub-theme",
-	Args: cobra.NoArgs,
+	Use:   "grub-theme",
+	Short: "https://github.com/vinceliuice/grub2-themes",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return grub_theme.Install()

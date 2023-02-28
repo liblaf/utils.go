@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "brew",
-	Args: cobra.NoArgs,
+	Use:   "brew",
+	Short: "https://brew.sh/",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		return brew.Install()

@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "typora",
-	Args: cobra.NoArgs,
+	Use:   "typora",
+	Short: "https://typora.io",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return typora.Install()

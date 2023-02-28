@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "cloudflare-warp",
-	Args: cobra.NoArgs,
+	Use:   "cloudflare-warp",
+	Short: "https://pkg.cloudflareclient.com/install",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return cloudflare_warp.Install()

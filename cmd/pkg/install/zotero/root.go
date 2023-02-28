@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "zotero",
-	Args: cobra.NoArgs,
+	Use:   "zotero",
+	Short: "https://www.zotero.org/download/",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return zotero.Install()

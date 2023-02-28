@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "code",
-	Args: cobra.NoArgs,
+	Use:   "code",
+	Short: "https://code.visualstudio.com",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return code.Install()

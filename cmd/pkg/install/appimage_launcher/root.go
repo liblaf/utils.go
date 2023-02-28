@@ -6,8 +6,9 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:  "appimage-launcher",
-	Args: cobra.NoArgs,
+	Use:   "appimage-launcher",
+	Short: "https://github.com/TheAssassin/AppImageLauncher/wiki/Install-on-Ubuntu-or-Debian",
+	Args:  cobra.NoArgs,
 
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return appimage_launcher.Install()
