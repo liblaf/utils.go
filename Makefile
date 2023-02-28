@@ -4,6 +4,7 @@ ZSH_COMPLETIONS := $(ZSH_CUSTOM)/plugins/completions
 
 GOARCH ?= $(shell go env GOARCH)
 GOBIN  ?= $(HOME)/.local/bin
+GOEXE  ?= $(shell go env GOEXE)
 GOOS   ?= $(shell go env GOOS)
 
 ENV := env GOARCH=$(GOARCH) GOBIN=$(GOBIN) GOOS=$(GOOS)
@@ -20,9 +21,9 @@ clean:
 	$(RM) docs/utils/utils*.md
 
 docs: build
-	$(BIN)/hello docs -p docs/hello
-	$(BIN)/pkg docs -p docs/pkg
-	$(BIN)/utils docs -p docs/utils
+	$(BIN)/hello$(GOEXE) docs -p docs/hello
+	$(BIN)/pkg$(GOEXE) docs -p docs/pkg
+	$(BIN)/utils$(GOEXE) docs -p docs/utils
 
 fmt:
 	$(GO) fmt ./...

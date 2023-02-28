@@ -19,17 +19,12 @@ function run() {
 workspace="$(git rev-parse --show-toplevel || pwd)"
 cd "${workspace}"
 
-GOOS="$(go env GOOS)"
 GOARCH="$(go env GOARCH)"
+GOEXE="$(go env GOEXE)"
+GOOS="$(go env GOOS)"
 
 for f in bin/*; do
-  if [[ ${f} =~ .*.exe ]]; then
-    if [[ ! ${f} =~ .*-[[:alnum:]]+-[[:alnum:]]+.exe ]]; then
-      run mv "${f}" "${f%.exe}-${GOOS}-${GOARCH}.exe"
-    fi
-  else
-    if [[ ! ${f} =~ .*-[[:alnum:]]+-[[:alnum:]]+ ]]; then
-      run mv "${f}" "${f}-${GOOS}-${GOARCH}"
-    fi
+  if [[ ! ${f} =~ .*-[[:alnum:]]+-[[:alnum:]]+(.exe)? ]]; then
+    run mv "${f}" "${f%${GOEXE}}-${GOOS}-${GOARCH}${GOEXE}"
   fi
 done
