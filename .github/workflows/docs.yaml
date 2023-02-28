@@ -13,6 +13,7 @@ env:
 
 jobs:
   docs:
+    name: Deploy Documentation to Github Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
