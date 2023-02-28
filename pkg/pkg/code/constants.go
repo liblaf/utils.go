@@ -17,7 +17,7 @@ func sourcesListPath() string {
 
 const ascURL = "https://packages.microsoft.com/keys/microsoft.asc"
 
-func trustedGpgPath() string {
+func gpgPath() string {
 	return filepath.Join(ubuntu.AptTrustedGpgD(), "microsoft.gpg")
 }
 

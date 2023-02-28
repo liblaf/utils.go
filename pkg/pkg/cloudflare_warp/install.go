@@ -1,4 +1,4 @@
-package edge
+package cloudflare_warp
 
 import (
 	"io"
@@ -11,9 +11,9 @@ import (
 func Install() (err error) {
 	defer try.Handle(&err)
 	try.E(installGPG())
-	try.E(installSources())
+	try.E(addSources())
 	try.E(ex.Command("sudo", "apt", "update").Bind().Run())
-	try.E(ex.Command("sudo", "apt", "install", "microsoft-edge-stable").Bind().Run())
+	try.E(ex.Command("sudo", "apt", "install", "cloudflare-warp").Bind().Run())
 	return nil
 }
 
@@ -31,13 +31,13 @@ func installGPG() (err error) {
 	return nil
 }
 
-func installSources() (err error) {
+func addSources() (err error) {
 	defer try.Handle(&err)
 	c := ex.Command("sudo", "tee", sourcesListPath())
 	stdin := try.E1(c.StdinPipe())
 	go func() {
 		defer stdin.Close()
-		stdin.Write([]byte(sources))
+		stdin.Write([]byte(try.E1(sources())))
 	}()
 	try.E(c.Run())
 	return nil
