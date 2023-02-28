@@ -1,6 +1,7 @@
 package install
 
 import (
+	"github.com/liblaf/utils.go/cmd/pkg/install/appimage_launcher"
 	"github.com/liblaf/utils.go/cmd/pkg/install/brew"
 	"github.com/liblaf/utils.go/cmd/pkg/install/cfw"
 	"github.com/liblaf/utils.go/cmd/pkg/install/cloudflare_warp"
@@ -19,6 +20,7 @@ var RootCmd = &cobra.Command{
 }
 
 func init() {
+	RootCmd.AddCommand(appimage_launcher.RootCmd)
 	RootCmd.AddCommand(brew.RootCmd)
 	RootCmd.AddCommand(cfw.RootCmd)
 	RootCmd.AddCommand(cloudflare_warp.RootCmd)
