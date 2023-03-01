@@ -5,6 +5,7 @@ import (
 	"github.com/liblaf/utils.go/cmd/utils/assets"
 	"github.com/liblaf/utils.go/cmd/utils/clean"
 	"github.com/liblaf/utils.go/cmd/utils/keys"
+	"github.com/liblaf/utils.go/cmd/utils/pretty"
 	"github.com/liblaf/utils.go/cmd/utils/update"
 	"github.com/spf13/cobra"
 )
@@ -19,5 +20,6 @@ func init() {
 	RootCmd.AddCommand(clean.RootCmd)
 	RootCmd.AddCommand(docs.RootCmd)
 	RootCmd.AddCommand(keys.RootCmd)
+	RootCmd.AddCommand(pretty.RootCmd)
 	RootCmd.AddCommand(update.RootCmd)
 }
