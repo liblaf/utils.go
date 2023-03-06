@@ -9,7 +9,7 @@ require (
 	github.com/gosimple/slug v1.13.1
 	github.com/mholt/archiver/v3 v3.5.1
 	github.com/otiai10/copy v1.9.0
-	github.com/pterm/pterm v0.12.54
+	github.com/pterm/pterm v0.12.55
 	github.com/spf13/cobra v1.6.1
 	mvdan.cc/sh/v3 v3.6.0
 )
@@ -42,9 +42,9 @@ require (
 	golang.org/x/crypto v0.6.0 // indirect
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/oauth2 v0.5.0 // indirect
-	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/term v0.5.0 // indirect
-	golang.org/x/text v0.7.0 // indirect
+	golang.org/x/text v0.8.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
