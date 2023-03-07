@@ -14,7 +14,7 @@ func RunCommands(cmd *cobra.Command, args []string) (err error) {
 	for _, c := range cmd.Commands() {
 		pterm.DefaultSection.Println(c.CommandPath())
 		root.SetArgs(append(strings.Fields(c.CommandPath())[1:], args...))
-		try.E(root.Execute())
+		root.Execute()
 	}
 	return nil
 }

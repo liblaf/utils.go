@@ -25,14 +25,14 @@ docs: build
 	$(BIN)/pkg$(GOEXE) docs -p docs/pkg
 	$(BIN)/utils$(GOEXE) docs -p docs/utils
 
-fmt:
-	$(GO) fmt ./...
-	$(GO) mod tidy
-
 install:
 	$(GO) install ./...
 	pkg completion zsh > $(ZSH_COMPLETIONS)/_pkg
 	utils completion zsh > $(ZSH_COMPLETIONS)/_utils
+
+pretty:
+	$(GO) fmt ./...
+	$(GO) mod tidy
 
 rename: build
 	$(ENV) $(SHELL) $(CURDIR)/scripts/rename.sh
