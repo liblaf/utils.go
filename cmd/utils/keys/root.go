@@ -1,8 +1,13 @@
 package keys
 
 import (
-	"github.com/liblaf/utils.go/cmd/utils/keys/_import"
+	"os"
+	"path"
+
+	"github.com/dsnet/try"
 	"github.com/liblaf/utils.go/cmd/utils/keys/export"
+	"github.com/liblaf/utils.go/cmd/utils/keys/import_"
+	er "github.com/liblaf/utils.go/pkg/std/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -12,9 +17,11 @@ var RootCmd = &cobra.Command{
 }
 
 func init() {
-	RootCmd.PersistentFlags().StringP("prefix", "p", "keys", "")
+	defer try.F(er.FatalOnError)
+
+	RootCmd.PersistentFlags().StringP("prefix", "p", path.Join(try.E1(os.Getwd()), "keys"), "")
 	RootCmd.MarkPersistentFlagDirname("prefix")
 
 	RootCmd.AddCommand(export.RootCmd)
-	RootCmd.AddCommand(_import.RootCmd)
+	RootCmd.AddCommand(import_.RootCmd)
 }
