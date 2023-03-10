@@ -2,18 +2,16 @@
 
 ## [1.3.0](https://github.com/liblaf/utils.go/compare/v1.2.0...v1.3.0) (2023-03-10)
 
-
 ### Features
 
-* **cmd/utils/check-unlock-media:** create check-unlock-media command ([8efc603](https://github.com/liblaf/utils.go/commit/8efc6031ca1e90b32869e1f7cc8b8c053224d796))
-* **cmd/utils/pretty:** create pretty command ([33a79b0](https://github.com/liblaf/utils.go/commit/33a79b03910bdf6ce7c2bc560094424565ec2f37))
-* **utils/keys:** create new commands: utils keys export ssh & utils keys import ssh ([812129b](https://github.com/liblaf/utils.go/commit/812129ba724764ee1bbf2bbdd5ed3e1139dfcae1))
-
+- **cmd/utils/check-unlock-media:** create check-unlock-media command ([8efc603](https://github.com/liblaf/utils.go/commit/8efc6031ca1e90b32869e1f7cc8b8c053224d796))
+- **cmd/utils/pretty:** create pretty command ([33a79b0](https://github.com/liblaf/utils.go/commit/33a79b03910bdf6ce7c2bc560094424565ec2f37))
+- **utils/keys:** create new commands: utils keys export ssh & utils keys import ssh ([812129b](https://github.com/liblaf/utils.go/commit/812129ba724764ee1bbf2bbdd5ed3e1139dfcae1))
 
 ### Bug Fixes
 
-* fix exec prompt ([07f1e7f](https://github.com/liblaf/utils.go/commit/07f1e7f9c1c5d0dcaf6d3f0280d95a21bef48012))
-* **utils/import/ssh:** fix perms error ([71de61c](https://github.com/liblaf/utils.go/commit/71de61c2de3365bf6314f65ca08b55cc17454778))
+- fix exec prompt ([07f1e7f](https://github.com/liblaf/utils.go/commit/07f1e7f9c1c5d0dcaf6d3f0280d95a21bef48012))
+- **utils/import/ssh:** fix perms error ([71de61c](https://github.com/liblaf/utils.go/commit/71de61c2de3365bf6314f65ca08b55cc17454778))
 
 ## [1.2.0](https://github.com/liblaf/utils.go/compare/v1.1.0...v1.2.0) (2023-02-28)
 
