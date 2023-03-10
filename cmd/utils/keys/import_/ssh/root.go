@@ -24,14 +24,14 @@ var RootCmd = &cobra.Command{
 
 		configSrc := filepath.Join(prefix, "ssh", "config")
 		if try.E1(pa.Exists(configSrc)) {
-			try.E(ex.Command("install", "-D", "--target-directory", targetDirectory, configSrc).Bind().Run())
+			try.E(ex.Command("install", "-D", "--mode", "u=rw,go=r", "--target-directory", targetDirectory, configSrc).Bind().Run())
 		}
 		for _, keyType := range keyTypes {
 			keySrc := filepath.Join(prefix, "ssh", "id_"+keyType)
 			pubKeySrc := keySrc + ".pub"
 			if try.E1(pa.Exists(keySrc)) {
-				try.E(ex.Command("install", "-D", "--target-directory", targetDirectory, keySrc).Bind().Run())
-				try.E(ex.Command("install", "-D", "--target-directory", targetDirectory, pubKeySrc).Bind().Run())
+				try.E(ex.Command("install", "-D", "--mode", "u=rw,go=", "--target-directory", targetDirectory, keySrc).Bind().Run())
+				try.E(ex.Command("install", "-D", "--mode", "u=rw,go=r", "--target-directory", targetDirectory, pubKeySrc).Bind().Run())
 			}
 		}
 
