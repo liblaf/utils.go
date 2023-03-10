@@ -13,7 +13,7 @@ env:
 
 jobs:
   docs:
-    name: Deploy Documentation to Github Pages
+    name: Deploy Documentation to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,6 +35,6 @@ jobs:
           key: ${{ github.ref }}
           path: .cache
       - name: Install Dependencies
-        run: pip install -r requirements.txt
-      - name: Deploy Documentation to Github Pages
+        run: pip install --requirement=requirements.txt
+      - name: Deploy Documentation to GitHub Pages
         run: mkdocs gh-deploy --force --no-history
